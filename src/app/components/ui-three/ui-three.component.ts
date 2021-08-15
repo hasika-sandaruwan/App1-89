@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-ui-three',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UiThreeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  navigate(location: string) {
+    this.router.navigate(['/uiThree/'+location]).then(response=>{
+      alert('Ok');
+    }).catch(error=>{
+      alert(error)
+    })
+  }
 }

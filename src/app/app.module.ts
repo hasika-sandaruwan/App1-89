@@ -13,6 +13,9 @@ import {MatMenuModule} from "@angular/material/menu";
 import { UiOneComponent } from './components/ui-one/ui-one.component';
 import { UiTwoComponent } from './components/ui-two/ui-two.component';
 import { UiThreeComponent } from './components/ui-three/ui-three.component';
+import { ChildOneComponent } from './components/ui-three/inner-items/child-one/child-one.component';
+import { ChildTwoComponent } from './components/ui-three/inner-items/child-two/child-two.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { UiThreeComponent } from './components/ui-three/ui-three.component';
     ModalOneComponent,
     UiOneComponent,
     UiTwoComponent,
-    UiThreeComponent
+    UiThreeComponent,
+    ChildOneComponent,
+    ChildTwoComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
