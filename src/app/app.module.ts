@@ -16,6 +16,8 @@ import { UiThreeComponent } from './components/ui-three/ui-three.component';
 import { ChildOneComponent } from './components/ui-three/inner-items/child-one/child-one.component';
 import { ChildTwoComponent } from './components/ui-three/inner-items/child-two/child-two.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

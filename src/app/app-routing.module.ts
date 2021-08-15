@@ -8,18 +8,7 @@ import {ChildTwoComponent} from "./components/ui-three/inner-items/child-two/chi
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: '/uiOne', pathMatch: 'full'},
-  {path: 'uiOne', component: UiOneComponent},
-  {path: 'uiTwo/:name', component: UiTwoComponent},
-  {
-    path: 'uiThree', component: UiThreeComponent,
-    children: [
-      {path: '', redirectTo: '/uiThree/childOne', pathMatch: 'full'},
-      {path: 'childOne', component: ChildOneComponent},
-      {path: 'childTwo', component: ChildTwoComponent}
-    ]
-  },
-  {path: '**', component: PageNotFoundComponent},
+
 ];
 
 @NgModule({

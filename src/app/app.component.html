@@ -1,13 +1,25 @@
+<!--HTTP And Directives-->
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
 
-<div style="padding: 10px">
-  <input [(ngModel)]="userName" type="text" name="sample" id="sampleId" class="form-control">
-</div>
+<div class="main-wrap">
+  <button (click)="loadAll()" type="button" class="btn btn-primary">Load All Comments</button>
+  <hr>
 
-<div class="button-wrap">
-  <button class="button" routerLink="/uiOne" routerLinkActive="active">Ui One</button>
-  <button class="button"
-          routerLink="/uiTwo/{{userName}}" routerLinkActive="active">Ui Two (Data)</button>
-  <button class="button" routerLink="/uiThree" routerLinkActive="active">Ui Three</button>
+  <div class="inner-wrap" *ngFor="let tempData of dataArray" style="margin-bottom: 20px">
+    <ul>
+      <li>
+        <span>Id: {{tempData?.id}}</span>
+      </li>
+      <li>
+        <span>Name : {{tempData?.name}}</span>
+      </li>
+      <li>
+        <span>Email: {{tempData?.email}}</span>
+      </li>
+    </ul>
+    <br>
+    <p class="alert alert-primary">
+     {{tempData?.body}}
+    </p>
+  </div>
 </div>
-<hr>
-<router-outlet></router-outlet>
