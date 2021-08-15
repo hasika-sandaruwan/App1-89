@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {MatDialog} from "@angular/material/dialog";
+import {ModalOneComponent} from "./modal/modal-one/modal-one.component";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'App1';
+
+  constructor(private dialog: MatDialog) {
+  }
+
+
+  openModal() {
+    this.dialog.open(ModalOneComponent);
+  }
 }
