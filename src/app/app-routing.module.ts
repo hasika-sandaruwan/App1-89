@@ -5,6 +5,7 @@ import {UiTwoComponent} from "./components/ui-two/ui-two.component";
 import {UiThreeComponent} from "./components/ui-three/ui-three.component";
 
 const routes: Routes = [
+  {path:'', redirectTo: '/uiOne', pathMatch: 'full'},
   {path:'uiOne', component: UiOneComponent},
   {path:'uiTwo', component: UiTwoComponent},
   {path:'uiThree', component: UiThreeComponent}
