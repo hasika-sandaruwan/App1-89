@@ -1,9 +1,12 @@
 
-
+<div style="padding: 10px">
+  <input [(ngModel)]="userName" type="text" name="sample" id="sampleId" class="form-control">
+</div>
 
 <div class="button-wrap">
   <button class="button" routerLink="/uiOne" routerLinkActive="active">Ui One</button>
-  <button class="button" routerLink="/uiTwo" routerLinkActive="active">Ui Two</button>
+  <button class="button"
+          routerLink="/uiTwo/{{userName}}" routerLinkActive="active">Ui Two (Data)</button>
   <button class="button" routerLink="/uiThree" routerLinkActive="active">Ui Three</button>
 </div>
 <hr>

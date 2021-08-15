@@ -10,11 +10,6 @@ import {ModalOneComponent} from "./modal/modal-one/modal-one.component";
 })
 export class AppComponent {
 
-  constructor(private dialog: MatDialog) {
-  }
+  userName='';
 
-
-  openModal() {
-    this.dialog.open(ModalOneComponent);
-  }
 }

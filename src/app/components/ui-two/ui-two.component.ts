@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+
 
 @Component({
   selector: 'app-ui-two',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ui-two.component.scss']
 })
 export class UiTwoComponent implements OnInit {
+  importedUserName: string | null = '';
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+   /* this.importedUserName =
+      this.activatedRoute.snapshot.paramMap.get('name');*/
+
+    this.activatedRoute.paramMap.subscribe(resp=>{
+      this.importedUserName = resp.get('name');
+    }, error => {
+      console.log(error)
+    })
+
   }
 
 }
