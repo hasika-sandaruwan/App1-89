@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {ModalOneComponent} from "./modal/modal-one/modal-one.component";
 import {HttpClient} from "@angular/common/http";
+import {CommentService} from "./services/comment.service";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,10 @@ export class AppComponent {
   dataArray:any | Object []=[];
   loading=false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private commentService: CommentService) {
+
+  }
+
 
   /*
   * POST -> Save [body]
@@ -25,7 +29,7 @@ export class AppComponent {
 
   loadAll() {
     this.loading=true;
-    this.http.get('https://jsonplaceholder.typicode.com/comments').subscribe(response=>{
+   this.commentService.getAllComments().subscribe(response=>{
       this.dataArray = response;
       this.loading=false;
       console.log(this.dataArray)
